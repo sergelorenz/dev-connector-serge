@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "b9693840-2c6e-4b07-b651-0bc61ff54210",
+		"name": "Dev Connector",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users and Auth",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Serge Lorenz Villasica\",\r\n    \"email\": \"sergelorenz.villasica@gmail.com\",\r\n    \"password\": \"123456\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/users",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Logged In User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5ZGIyYTZiNjU2NzgzMmZjYmFlNTNiIn0sImlhdCI6MTYyMDk0NzYyMiwiZXhwIjoxNjIxMzA3NjIyfQ.0iAFEyU5NjRJY6-Q1iJ7I5HUjo3irc3uGpIN2l4U2H8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:5000/api/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sergelorenz.villasica@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Posts",
+			"item": []
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "Get My Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5ZGIyYTZiNjU2NzgzMmZjYmFlNTNiIn0sImlhdCI6MTYyMDk5ODUwNSwiZXhwIjoxNjIxMzU4NTA1fQ.bt7ujPlulBbrlJwwkPSKs9dAjtVtaAR0sdIJbCNlSJk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:5000/api/profile/me",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"profile",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create or Update Profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5ZGIyYTZiNjU2NzgzMmZjYmFlNTNiIn0sImlhdCI6MTYyMDk5ODUwNSwiZXhwIjoxNjIxMzU4NTA1fQ.bt7ujPlulBbrlJwwkPSKs9dAjtVtaAR0sdIJbCNlSJk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\": \"Navagis Inc.\",\r\n    \"status\": \"Developer\",\r\n    \"skills\": \"React, Python, JS, HTML, CSS, C#, Java\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Profiles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Profile, User, and Posts",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5ZWUxZDRhZjZmZjQwNDljNzQyYmMzIn0sImlhdCI6MTYyMTAyNTIzNiwiZXhwIjoxNjIxMzg1MjM2fQ.4dC0JyN1oFlYAeGtT2v5nLYPXlbmHqC8voYJ814ir6g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Experience",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjA5ZGIyYTZiNjU2NzgzMmZjYmFlNTNiIn0sImlhdCI6MTYyMDk5ODUwNSwiZXhwIjoxNjIxMzU4NTA1fQ.bt7ujPlulBbrlJwwkPSKs9dAjtVtaAR0sdIJbCNlSJk",
+								"description": "My Token",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:5000/api/profile/experience",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"profile",
+								"experience"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
